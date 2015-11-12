@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ItemsViewController.h
 //  Homeowner
 //
 //  Created by Johny Babylon on 11/11/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UITableViewController
-
+@interface ItemsViewController : UITableViewController
 
 @end
-
