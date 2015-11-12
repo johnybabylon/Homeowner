@@ -12,6 +12,8 @@
 
 @interface ItemsViewController ()
 
+@property (nonatomic, strong) IBOutlet UIView *headerView;
+
 @end
 
 @implementation ItemsViewController
@@ -34,11 +36,44 @@
 //    return [self init];
 //}
 
+- (IBAction)addNewItem:(id)sender
+{
+    
+}
+
+- (IBAction)toggleEditingMode:(id)sender
+{
+    
+        // If you are currently in editing mode...
+        if (self.isEditing) {
+            
+            // Change text of button to inform user of state
+            [sender setTitle:@"Edit" forState:UIControlStateNormal];
+            
+            // Turn off editing mode
+            [self setEditing:NO animated:YES];
+        } else {
+            
+            // Change text of button to inform user of state
+            [sender setTitle:@"Done" forState:UIControlStateNormal];
+            
+            // Enter editing mode
+            [self setEditing:YES animated:YES];
+        }
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self.tableView registerClass:[UITableViewCell class]
            forCellReuseIdentifier:@"UITableViewCell"];
+    
+    [self.headerView setAutoresizingMask:UIViewAutoresizingNone];
+
+    
+    UIView *header = self.headerView;
+    [self.tableView setTableHeaderView:header];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -81,6 +116,17 @@
     cell.textLabel.text = [item description];
     
     return cell;
+}
+
+- (UIView *)headerView
+{
+    if (!_headerView) {
+        
+        [[NSBundle mainBundle] loadNibNamed:@"HeaderView" owner:self options:nil];
+        
+    }
+    
+    return _headerView;
 }
 
 

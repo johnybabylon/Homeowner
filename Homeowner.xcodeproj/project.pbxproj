@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F43BABBC1BF47D6D00CF33C0 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43BABBB1BF47D6D00CF33C0 /* HeaderView.xib */; };
 		F478E2F01BF44CC200DB7625 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F478E2EF1BF44CC200DB7625 /* main.m */; };
 		F478E2F31BF44CC200DB7625 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F478E2F21BF44CC200DB7625 /* AppDelegate.m */; };
 		F478E2F61BF44CC200DB7625 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F478E2F51BF44CC200DB7625 /* ViewController.m */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F43BABBB1BF47D6D00CF33C0 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		F478E2EA1BF44CC200DB7625 /* Homeowner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homeowner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F478E2EE1BF44CC200DB7625 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F478E2EF1BF44CC200DB7625 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				F478E2F51BF44CC200DB7625 /* ViewController.m */,
 				F478E3131BF44F7900DB7625 /* ItemsViewController.h */,
 				F478E3141BF44F7900DB7625 /* ItemsViewController.m */,
+				F43BABBB1BF47D6D00CF33C0 /* HeaderView.xib */,
 				F478E2F71BF44CC200DB7625 /* Main.storyboard */,
 				F478E2FA1BF44CC200DB7625 /* Images.xcassets */,
 				F478E2FC1BF44CC200DB7625 /* LaunchScreen.xib */,
@@ -217,6 +220,7 @@
 				F478E2F91BF44CC200DB7625 /* Main.storyboard in Resources */,
 				F478E2FE1BF44CC200DB7625 /* LaunchScreen.xib in Resources */,
 				F478E2FB1BF44CC200DB7625 /* Images.xcassets in Resources */,
+				F43BABBC1BF47D6D00CF33C0 /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +440,7 @@
 				F478E30F1BF44CC300DB7625 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F478E3101BF44CC300DB7625 /* Build configuration list for PBXNativeTarget "HomeownerTests" */ = {
 			isa = XCConfigurationList;
@@ -444,6 +449,7 @@
 				F478E3121BF44CC300DB7625 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
