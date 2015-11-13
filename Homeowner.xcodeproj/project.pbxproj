@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2953D3391BF68B8A008B0B32 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2953D3371BF68B8A008B0B32 /* DetailViewController.m */; };
+		2953D33A1BF68B8A008B0B32 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2953D3381BF68B8A008B0B32 /* DetailViewController.xib */; };
 		F43BABBC1BF47D6D00CF33C0 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43BABBB1BF47D6D00CF33C0 /* HeaderView.xib */; };
 		F478E2F01BF44CC200DB7625 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F478E2EF1BF44CC200DB7625 /* main.m */; };
 		F478E2F31BF44CC200DB7625 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F478E2F21BF44CC200DB7625 /* AppDelegate.m */; };
@@ -31,6 +33,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2953D3361BF68B8A008B0B32 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = ../DetailViewController.h; sourceTree = "<group>"; };
+		2953D3371BF68B8A008B0B32 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = ../DetailViewController.m; sourceTree = "<group>"; };
+		2953D3381BF68B8A008B0B32 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailViewController.xib; path = ../DetailViewController.xib; sourceTree = "<group>"; };
 		F43BABBB1BF47D6D00CF33C0 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		F478E2EA1BF44CC200DB7625 /* Homeowner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homeowner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F478E2EE1BF44CC200DB7625 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,6 +99,9 @@
 			children = (
 				F478E3161BF4514900DB7625 /* THTItem.h */,
 				F478E3171BF4514900DB7625 /* THTItem.m */,
+				2953D3361BF68B8A008B0B32 /* DetailViewController.h */,
+				2953D3371BF68B8A008B0B32 /* DetailViewController.m */,
+				2953D3381BF68B8A008B0B32 /* DetailViewController.xib */,
 				F478E3191BF452CB00DB7625 /* ItemStore.h */,
 				F478E31A1BF452CB00DB7625 /* ItemStore.m */,
 				F478E2F11BF44CC200DB7625 /* AppDelegate.h */,
@@ -219,6 +227,7 @@
 			files = (
 				F478E2F91BF44CC200DB7625 /* Main.storyboard in Resources */,
 				F478E2FE1BF44CC200DB7625 /* LaunchScreen.xib in Resources */,
+				2953D33A1BF68B8A008B0B32 /* DetailViewController.xib in Resources */,
 				F478E2FB1BF44CC200DB7625 /* Images.xcassets in Resources */,
 				F43BABBC1BF47D6D00CF33C0 /* HeaderView.xib in Resources */,
 			);
@@ -244,6 +253,7 @@
 				F478E3151BF44F7900DB7625 /* ItemsViewController.m in Sources */,
 				F478E2F31BF44CC200DB7625 /* AppDelegate.m in Sources */,
 				F478E2F01BF44CC200DB7625 /* main.m in Sources */,
+				2953D3391BF68B8A008B0B32 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +382,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Homeowner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -382,6 +393,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Homeowner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

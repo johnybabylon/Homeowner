@@ -9,6 +9,7 @@
 #import "ItemsViewController.h"
 #import "THTItem.h"
 #import "ItemStore.h"
+#import "DetailViewController.h"
 
 @interface ItemsViewController ()
 
@@ -33,6 +34,19 @@
 //{
 //    return [self init];
 //}
+
+- (void)tableView:(UITableView *)tableView
+    didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DetailViewController *detailViewController = [[DetailViewController alloc] init];
+    
+    NSArray *items = [[ItemStore sharedStore] allItems];
+    THTItem *selectedItem = items[indexPath.row];
+    
+    detailViewController.item = selectedItem;
+    
+    [self.navigationController pushViewController:detailViewController animated:YES];
+}
 
 - (IBAction)addNewItem:(id)sender
 {
@@ -151,6 +165,13 @@
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {
     [[ItemStore sharedStore] moveItemAtIndex:sourceIndexPath.row toIndex:destinationIndexPath.row];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
 }
 
 
