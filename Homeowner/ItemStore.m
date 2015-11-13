@@ -64,6 +64,21 @@
     return item;
 }
 
+- (void)removeItem:(THTItem *)item
+{
+    [self.privateItems removeObjectIdenticalTo:item];
+}
+
+- (void)moveItemAtIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex
+{
+    if (fromIndex == toIndex) {
+        return;
+    }
+    
+    THTItem *item = self.privateItems[fromIndex];
+    [self.privateItems removeObjectAtIndex:fromIndex];
+    [self.privateItems insertObject:item atIndex:toIndex];
+}
 
 
 

@@ -23,9 +23,7 @@
     // Call the superclass's designated initializer
     self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
-        for (int i = 0; i < 5; i++) {
-            [[ItemStore sharedStore] createItem];
-        }
+        
     }
     
     return self;
@@ -38,6 +36,13 @@
 
 - (IBAction)addNewItem:(id)sender
 {
+    THTItem *newItem = [[ItemStore sharedStore] createItem];
+    
+    NSInteger lastRow = [[[ItemStore sharedStore] allItems] indexOfObject:newItem];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRow inSection:0];
+    
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
     
 }
 
@@ -129,6 +134,25 @@
     return _headerView;
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the table source
+        NSArray *items = [[ItemStore sharedStore] allItems];
+        THTItem *item = items[indexPath.row];
+        [[ItemStore sharedStore] removeItem:item];
+        
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
+
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    [[ItemStore sharedStore] moveItemAtIndex:sourceIndexPath.row toIndex:destinationIndexPath.row];
+}
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -139,24 +163,15 @@
 */
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+ 
+ 
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
 
-/*
+
+
+
+
+
 // Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the item to be re-orderable.

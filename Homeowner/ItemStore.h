@@ -16,5 +16,8 @@
 
 + (instancetype)sharedStore;
 - (THTItem *)createItem;
+- (void)removeItem:(THTItem *)item;
+- (void)moveItemAtIndex:(NSUInteger)fromIndex
+                toIndex:(NSUInteger)toIndex;
 
 @end
